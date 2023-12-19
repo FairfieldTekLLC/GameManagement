@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script language="javascript">
+    function login() {
+        var un = $("#username").val();
+        var pw = $("#password").val();
+
+        $.ajax({
+            url: '@Url.Action("Login", "Login")',
+            data: { username:un,password:pw},
+            type: 'POST',
+            cache: false,
+            error: function (result) {
+                alert('there was an error deleting the file - ' + url);
+            },
+            success: function (response) {
+                if (response.auth == true) {
+                    alert('woot');
+                }
+            }
+        });
+
+
+
+
+
+
+    }
+</script>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Wookiee Walker's Game Tracking System</h1>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" id="username" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" id="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id="btnLogin" name="btnLogin" onclick="login()" lang="javascript">Login</button></td>
+        </tr>
+    </table>
+
+</div>
