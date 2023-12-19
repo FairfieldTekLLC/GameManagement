@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TFS\\General Projects\\GameManager\\GameManager\\GameManager.csproj": {}
+    "C:\\Source Tree\\GameManager\\Source\\GameManager.csproj": {}
   },
   "projects": {
-    "C:\\TFS\\General Projects\\GameManager\\GameManager\\GameManager.csproj": {
+    "C:\\Source Tree\\GameManager\\Source\\GameManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TFS\\General Projects\\GameManager\\GameManager\\GameManager.csproj",
+        "projectUniqueName": "C:\\Source Tree\\GameManager\\Source\\GameManager.csproj",
         "projectName": "GameManager",
-        "projectPath": "C:\\TFS\\General Projects\\GameManager\\GameManager\\GameManager.csproj",
+        "projectPath": "C:\\Source Tree\\GameManager\\Source\\GameManager.csproj",
         "packagesPath": "C:\\Users\\geev\\.nuget\\packages\\",
-        "outputPath": "C:\\TFS\\General Projects\\GameManager\\GameManager\\obj\\",
+        "outputPath": "C:\\Source Tree\\GameManager\\Source\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

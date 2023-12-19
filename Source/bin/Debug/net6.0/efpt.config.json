@@ -38,6 +38,10 @@
       {
          "Name": "[dbo].[Players]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PlayerSessionKeys]",
+         "ObjectType": 0
       }
    ],
    "UiHint": "fftsql02.GameManagement.dbo",

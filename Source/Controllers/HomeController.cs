@@ -13,9 +13,9 @@ namespace GameManager.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string key)
         {
-            return View();
+            return View(key);
         }
 
         public IActionResult Privacy()

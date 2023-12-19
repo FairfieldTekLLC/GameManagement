@@ -42,5 +42,10 @@ namespace GameManager.Controllers
             }
             return Json(new { auth = false });
         }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
     }
 }

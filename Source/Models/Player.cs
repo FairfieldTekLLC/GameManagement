@@ -24,4 +24,6 @@ public partial class Player
     public bool IsAdmin { get; set; }
 
     public virtual ICollection<Game> Games { get; set; } = new List<Game>();
+
+    public virtual ICollection<PlayerSessionKey> PlayerSessionKeys { get; set; } = new List<PlayerSessionKey>();
 }

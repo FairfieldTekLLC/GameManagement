@@ -31,10 +31,6 @@ public partial class GameManagementContext : DbContext
 
     public virtual DbSet<PlayerSessionKey> PlayerSessionKeys { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=fftsql02;Initial Catalog=GameManagement;Integrated Security=True");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<DaysOfWeek>(entity =>
@@ -55,9 +51,7 @@ public partial class GameManagementContext : DbContext
         {
             entity.HasKey(e => e.PkGameId);
 
-            entity.Property(e => e.PkGameId)
-                .ValueGeneratedNever()
-                .HasColumnName("pkGameId");
+            entity.Property(e => e.PkGameId).HasColumnName("pkGameId");
             entity.Property(e => e.FkDayOfWeek).HasColumnName("fkDayOfWeek");
             entity.Property(e => e.FkGameTypeId).HasColumnName("fkGameTypeId");
             entity.Property(e => e.Gm).HasColumnName("GM");
@@ -124,9 +118,7 @@ public partial class GameManagementContext : DbContext
         {
             entity.HasKey(e => e.PkGameTypeId);
 
-            entity.Property(e => e.PkGameTypeId)
-                .ValueGeneratedNever()
-                .HasColumnName("pkGameTypeId");
+            entity.Property(e => e.PkGameTypeId).HasColumnName("pkGameTypeId");
             entity.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -136,9 +128,7 @@ public partial class GameManagementContext : DbContext
         {
             entity.HasKey(e => e.PkPlayerId);
 
-            entity.Property(e => e.PkPlayerId)
-                .ValueGeneratedNever()
-                .HasColumnName("pkPlayerId");
+            entity.Property(e => e.PkPlayerId).HasColumnName("pkPlayerId");
             entity.Property(e => e.Email).IsRequired();
             entity.Property(e => e.FirstName)
                 .IsRequired()
@@ -160,14 +150,14 @@ public partial class GameManagementContext : DbContext
 
         modelBuilder.Entity<PlayerSessionKey>(entity =>
         {
-            entity.HasNoKey();
+            entity.HasKey(e => new { e.FkPlayerId, e.SessionKey, e.IssueDt });
 
             entity.Property(e => e.FkPlayerId).HasColumnName("fkPlayerId");
             entity.Property(e => e.IssueDt)
                 .HasColumnType("datetime")
                 .HasColumnName("issueDt");
 
-            entity.HasOne(d => d.FkPlayer).WithMany()
+            entity.HasOne(d => d.FkPlayer).WithMany(p => p.PlayerSessionKeys)
                 .HasForeignKey(d => d.FkPlayerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_PlayerSessionKeys_Players");

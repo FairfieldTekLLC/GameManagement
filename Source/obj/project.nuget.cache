@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XFtuyU5TKb1RF7uy2xBicKBRkeImIECLnysx0qpDpfzuLfDcCWPUSVDM+fs4bM9ZTNJYpKzd9XvmDMl8EinuWA==",
+  "dgSpecHash": "R0QmGPA6rXPL/+fAJuf3a7FWDgug6E8NTDkSPT0BlicV7cqqu0Idd87UFX0LFb8uVqjn3RCHBZYDjvTMHtkqMQ==",
   "success": true,
-  "projectFilePath": "C:\\TFS\\General Projects\\GameManager\\GameManager\\GameManager.csproj",
+  "projectFilePath": "C:\\Source Tree\\GameManager\\Source\\GameManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\geev\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\geev\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
